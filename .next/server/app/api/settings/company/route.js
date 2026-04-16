@@ -1,0 +1,10 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/settings/company/route.js")
+R.c("server/chunks/[root-of-the-server]__fe537ac5._.js")
+R.c("server/chunks/5997d_next_4992a80b._.js")
+R.c("server/chunks/Documents_Windykacja RPMS_rpms-windykacja-2_683_src_utils_session_ts_8ca95d93._.js")
+R.c("server/chunks/5431c_rpms-windykacja-2_683_src_shared_api_apiClientFactory_ts_6d01689e._.js")
+R.c("server/chunks/5997d_zod_v4_classic_external_aaa0836b.js")
+R.c("server/chunks/[root-of-the-server]__13a7c789._.js")
+R.c("server/chunks/c9bbb_683__next-internal_server_app_api_settings_company_route_actions_4ebf2948.js")
+R.m(497723)
+module.exports=R.m(497723).exports

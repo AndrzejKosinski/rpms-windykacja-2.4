@@ -1,0 +1,158 @@
+
+{
+  "seo": {
+    "home": {
+      "title": "RPMS Windykacja | Skuteczne Odzyskiwanie Należności dla MŚP",
+      "description": "Nowoczesna platforma windykacyjna łącząca automatyzację z profesjonalnym wsparciem prawnym. Odzyskaj swoje pieniądze szybko i bezpiecznie.",
+      "keywords": "windykacja, odzyskiwanie należności, prawo gospodarcze, MŚP, e-sąd, nakaz zapłaty"
+    },
+    "blog": {
+      "title": "Baza Wiedzy o Windykacji | Porady Prawne RPMS",
+      "description": "Eksperckie artykuły na temat windykacji, prawa gospodarczego i zarządzania płynnością finansową w firmie.",
+      "keywords": "blog prawny, porady windykacyjne, prawo dla firm, zatory płatnicze"
+    }
+  },
+  "auth": {
+    "demoUser": {
+      "email": "andrzej.kosinski@gmail.com",
+      "password": "123",
+      "name": "Andrzej Kosiński",
+      "role": "Konto Premium"
+    }
+  },
+  "hero": {
+    "badge": "Hybrydowy model windykacji",
+    "title": "Szybkie i skuteczne odzyskiwanie należności dla firm MŚP",
+    "description": "Windykacja, która łączy szybkość technologii i skuteczność prawa.",
+    "ctaPrimary": "Przekaż sprawę do windykacji",
+    "ctaSecondary": "Porozmawiaj z prawnikiem"
+  },
+  "trustBar": {
+    "logos": [
+      { "name": "Aegon", "logoUrl": "https://rpms.pl/wp-content/uploads/2026/02/aegon.png.webp" },
+      { "name": "iSpot", "logoUrl": "https://rpms.pl/wp-content/uploads/2026/02/ispot_-300x127.png.webp" }
+    ]
+  },
+  "blog": [
+    {
+      "id": "1",
+      "slug": "jak-odzyskac-pieniadze-z-faktury",
+      "title": "Jak odzyskać pieniądze z faktury z 2-letnim terminem płatności?",
+      "excerpt": "Przedawnienie roszczeń to najczęstszy powód utraty pieniędzy. Dowiedz się, jak skutecznie przerwać bieg przedawnienia.",
+      "content": "Przedawnienie roszczeń w obrocie gospodarczym to jeden z najtrudniejszych aspektów zarządzania płynnością. Standardowy termin dla faktur sprzedaży to 2 lata, ale istnieją wyjątki. \n\nPierwszym krokiem jest wezwanie do zapłaty. Musi być ono precyzyjne i wysłane listem poleconym. Nasz system hybrydowy robi to automatycznie, dodając pieczęć kancelarii, co drastycznie zwiększa skuteczność. \n\nKolejnym etapem jest skierowanie sprawy do EPU (Elektronicznego Postępowania Upominawczego). To najszybsza droga do uzyskania nakazu zapłaty, który po nadaniu klauzuli wykonalności staje się podstawą dla komornika. W LegalTech Hybrid cały proces przygotowania dokumentacji dla EPU trwa mniej niż 15 minut.",
+      "category": "Porady Prawne",
+      "author": "Mec. Anna Kowalska",
+      "date": "15 Paź 2024",
+      "publishedAt": "2024-10-15",
+      "status": "published",
+      "readTime": "5 min",
+      "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800",
+      "imageAlt": "Dokumenty prawne i okulary na biurku",
+      "faqs": [
+        {
+          "question": "Ile czasu mam na odzyskanie długu?",
+          "answer": "Standardowy termin przedawnienia dla faktur sprzedaży w obrocie gospodarczym wynosi 2 lata od daty wymagalności."
+        },
+        {
+          "question": "Czy muszę iść do sądu?",
+          "answer": "Nie zawsze. Wiele spraw udaje się rozwiązać na etapie polubownym dzięki odpowiednim wezwaniom z pieczęcią kancelarii. Jeśli to nie zadziała, kierujemy sprawę do E-Sądu."
+        }
+      ],
+      "seo": {
+        "title": "Jak odzyskać pieniądze z faktury? | Poradnik RPMS",
+        "description": "Dowiedz się jak skutecznie odzyskać pieniądze z faktur z 2-letnim terminem płatności i uniknąć przedawnienia.",
+        "keywords": "przedawnienie faktur, odzyskiwanie pieniędzy, wezwanie do zapłaty"
+      }
+    },
+    {
+      "id": "2",
+      "slug": "e-sad-vs-sad-cywilny-co-wybrac",
+      "title": "E-Sąd vs Sąd Cywilny: Co wybrać w 2024 roku?",
+      "excerpt": "Analiza kosztów i czasu trwania postępowań. Sprawdź, dlaczego 80% naszych klientów wybiera ścieżkę elektroniczną.",
+      "content": "Wybór między sądem tradycyjnym a EPU (Sądem Rejonowym w Lublinie) zależy od stopnia skomplikowania sprawy. Jeśli dłużnik nie kwestionuje długu, e-sąd jest bezkonkurencyjny pod względem kosztów (opłata sądowa to tylko 1.25% kwoty sporu). \n\nJednak w przypadku skomplikowanych sporów o jakość towaru, konieczne może być wstąpienie na drogę tradycyjną. Nasi prawnicy analizują każdą fakturę przesłaną do systemu, aby zarekomendować najtańszą i najszybszą ścieżkę.",
+      "category": "Strategia",
+      "author": "Piotr Nowak",
+      "date": "12 Paź 2024",
+      "publishedAt": "2024-10-12",
+      "status": "published",
+      "readTime": "8 min",
+      "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800",
+      "imageAlt": "Młotek sędziowski na biurku",
+      "seo": {
+        "title": "E-Sąd czy Sąd Cywilny? Porównanie 2024 | RPMS",
+        "description": "Analiza kosztów i czasu trwania postępowań w E-Sądzie i Sądzie Cywilnym. Wybierz najlepszą drogę dla swojej firmy.",
+        "keywords": "EPU, e-sąd, sąd cywilny, koszty sądowe"
+      }
+    },
+    {
+      "id": "3",
+      "slug": "pieczec-prewencyjna-jak-zmniejszyc-zatory",
+      "title": "Pieczęć prewencyjna: Jak zmniejszyć zatory płatnicze o 30%?",
+      "excerpt": "Prosta metoda psychologiczna, która sprawia, że Twoje faktury są opłacane w pierwszej kolejności.",
+      "content": "Dłużnicy często segregują faktury według priorytetów. Na samej górze zawsze lądują te, które wiążą się z ryzykiem prawnym. Pieczęć prewencyjna informująca o stałym nadzorze kancelarii prawnej to jasny sygnał: 'Z tą firmą nie warto zwlekać'. \n\nW naszym systemie możesz pobrać faktury z już naniesioną pieczęcią lub zintegrować swój program księgowy, aby automatycznie dodawał on stosowną informację na każdym dokumencie sprzedaży.",
+      "category": "Finanse",
+      "author": "Mec. Anna Kowalska",
+      "date": "10 Paź 2024",
+      "publishedAt": "2024-10-10",
+      "status": "published",
+      "readTime": "4 min",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+      "imageAlt": "Osoba stemplująca dokumenty",
+      "seo": {
+        "title": "Pieczęć Prewencyjna: Skuteczna Metoda na Dłużników | RPMS",
+        "description": "Jak pieczęć prewencyjna kancelarii prawnej może zmniejszyć zatory płatnicze w Twojej firmie o 30%.",
+        "keywords": "pieczęć prewencyjna, zatory płatnicze, prewencja windykacyjna"
+      }
+    }
+  ],
+  "pricing": [
+    {
+      "name": "Abonament",
+      "price": "od 199 PLN",
+      "period": "/mc",
+      "description": "Dla firm z regularnym obrotem faktur.",
+      "features": ["Nielimitowane monity", "Pełny Dashboard", "Integracje API"],
+      "highlight": false
+    },
+    {
+      "name": "Success Fee",
+      "price": "od 5%",
+      "period": "prowizji",
+      "description": "Płacisz tylko od realnie odzyskanej kwoty.",
+      "features": ["0 PLN kosztów stałych", "Pełna obsługa prawna", "Zero ryzyka finansowego"],
+      "highlight": true,
+      "badge": "Najczęściej wybierany"
+    },
+    {
+      "name": "White Label",
+      "price": "Indywidualnie",
+      "period": "",
+      "description": "Dla biur rachunkowych i grup kapitałowych.",
+      "features": ["Twoje logo i domena", "Dedykowana obsługa", "Model partnerski"],
+      "highlight": false
+    }
+  ],
+  "dashboard": {
+    "stats": [
+      { "label": "Aktywne sprawy", "value": "18", "sub": "+2 od wczoraj", "type": "blue" },
+      { "label": "Odzyskane (30 dni)", "value": "64.5k PLN", "sub": "Skuteczność 88%", "type": "green" },
+      { "label": "W windykacji sądowej", "value": "5", "sub": "Oczekiwanie na EPU", "type": "orange" },
+      { "label": "Średni czas spłaty", "value": "12 dni", "sub": "Szybciej o 4 dni", "type": "purple" }
+    ]
+  },
+  "pageLayout": [
+    { "id": "hero", "component": "HERO_MODERN", "visible": true },
+    { "id": "trust_bar", "component": "TRUST_BAR", "visible": true },
+    { "id": "why_us", "component": "WHY_US_V2", "visible": true },
+    { "id": "process", "component": "PROCESS_STEPS_V2", "visible": true },
+    { "id": "panel", "component": "DASHBOARD_PREVIEW_MODERN", "visible": true },
+    { "id": "target_audience", "component": "TARGET_AUDIENCE_MODERN", "visible": true },
+    { "id": "ai_operations", "component": "AI_OPERATIONS_MODERN", "visible": true },
+    { "id": "legal_support", "component": "LEGAL_SUPPORT_MODERN", "visible": true },
+    { "id": "comparison", "component": "COMPARISON_MODERN", "visible": true },
+    { "id": "pricing", "component": "PRICING_MODERN", "visible": true },
+    { "id": "lead_form", "component": "LEAD_FORM_MODERN", "visible": true },
+    { "id": "faq", "component": "FAQ_ACCORDION", "visible": true },
+    { "id": "final_cta", "component": "FINAL_CTA_MODERN", "visible": true }
+  ]
+}

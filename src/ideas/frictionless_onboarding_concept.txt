@@ -1,0 +1,38 @@
+
+IDEE / KONCEPCJE: REDUKCJA TARĆ (FRICTIONLESS ONBOARDING)
+Status: Do wdrożenia (Analiza UX)
+Autor: Senior Frontend Engineer
+
+OPIS PROBLEMU:
+Obecny wymóg zakładania konta (hasło) przed wysłaniem pierwszej faktury stanowi barierę wejścia dla klientów MŚP.
+
+PROPONOWANE ROZWIĄZANIE:
+Wprowadzenie modelu "Guest Submission" - windykacja bez konieczności natychmiastowej rejestracji.
+
+SCENARIUSZE WEJŚCIA:
+
+1. ŚCIEŻKA "AI UPLOAD" (Dla posiadaczy plików):
+   - Elementy: [File Upload Area]
+   - Wymagane po ekstrakcji: Email, Nr Telefonu.
+   - Akcja: Natychmiastowe wysłanie do Apps Script.
+
+2. ŚCIEŻKA "MANUAL QUICK-START" (Dla szybkich zapytań):
+   - Pola: 
+     * Kwota zadłużenia
+     * NIP lub Nazwa dłużnika
+     * Email kontaktowy
+     * Telefon do kontaktu
+   - Akcja: Przesłanie zgłoszenia do bazy "Leads/Cases".
+
+REJESTRACJA POST-FACTUM:
+Po wysłaniu zgłoszenia, system prezentuje ekran sukcesu z opcjonalnym przyciskiem:
+"Załóż konto, aby posiadać wgląd w przebieg swoich spraw, dodawać kolejne faktury i korzystać z Dashboardu Premium".
+
+ZALETY UX:
+- Redukcja pól formularza o min. 50%.
+- Brak konieczności zapamiętywania hasła w momencie stresu (brak zapłaty za fakturę).
+- Natychmiastowa gratyfikacja (potwierdzenie przyjęcia sprawy).
+
+WPŁYW NA BACKEND:
+- Apps Script musi obsługiwać flagę `isGuest: true`.
+- Mechanizm "Claim Account" - powiązanie maila z nowym kontem przy pierwszej próbie logowania/ustawienia hasła.

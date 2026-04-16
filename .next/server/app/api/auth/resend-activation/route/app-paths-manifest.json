@@ -1,0 +1,3 @@
+{
+  "/api/auth/resend-activation/route": "app/api/auth/resend-activation/route.js"
+}

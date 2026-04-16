@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /cms/
+Disallow: /panel/
+Disallow: /auth/
+
+Sitemap: https://rpms-windykacja.pl/sitemap.xml

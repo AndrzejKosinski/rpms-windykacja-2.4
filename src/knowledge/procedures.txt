@@ -1,0 +1,15 @@
+PROCEDURY WINDYKACYJNE I PRAWNE:
+
+1. Elektroniczne Postępowanie Upominawcze (EPU):
+- Sąd właściwy: Sąd Rejonowy Lublin-Zachód.
+- Wymagane dane: NIP dłużnika, precyzyjny adres siedziby, data wymagalności faktury.
+- Opłata sądowa: 1,25% wartości sporu (minimum 30 zł).
+- Czas oczekiwania na nakaz: Średnio 3-6 tygodni.
+
+2. Windykacja w branży TSL (Transport):
+- Wykorzystujemy blokady na giełdach (Trans.eu, Timocom).
+- Przy braku płatności powyżej 14 dni od terminu, wysyłany jest Monit 1 z rygorem blokady giełdowej.
+- Branża TSL charakteryzuje się terminami 60-90 dni, dlatego system monitoruje "starzenie się" długu już od 1. dnia po terminie.
+
+3. Procedura "Pieczęć Kancelarii":
+Wszystkie monity i wezwania generowane przez system posiadają cyfrową pieczęć Kancelarii współpracującej, co podnosi priorytet płatności u dłużnika o ok. 40% w porównaniu do monitów własnych wierzyciela.

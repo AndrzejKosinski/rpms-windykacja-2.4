@@ -1,0 +1,3 @@
+{
+  "/api/webhooks/crm-notify/route": "app/api/webhooks/crm-notify/route.js"
+}

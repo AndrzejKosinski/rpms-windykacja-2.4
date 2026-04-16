@@ -1,0 +1,214 @@
+"use client";
+
+import React, { useRef } from 'react';
+import * as Icons from 'lucide-react';
+import { ChevronRight, ChevronLeft, Mail, Scale, ShieldCheck, FileText } from 'lucide-react';
+import { useModal } from '../../../context/ModalContext';
+import { logCustomEvent } from '../../../utils/customLogger';
+
+interface WhyUsCard {
+  id: string;
+  icon: string;
+  title: string;
+  desc: string;
+  assignedModalId?: string | null;
+}
+
+interface WhyUsData {
+  header?: {
+    title: string;
+    description: string;
+  };
+  cards: WhyUsCard[];
+}
+
+interface WhyUsV2Props {
+  id?: string;
+  data?: WhyUsData;
+}
+
+const WhyUsV2: React.FC<WhyUsV2Props> = ({ id, data }) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { setSelectedWhyUsDetail, setActiveModal } = useModal();
+
+  const openWhyUsDetail = (detailId: string) => {
+    setSelectedWhyUsDetail(detailId);
+    setActiveModal('why-us');
+    logCustomEvent({ event_name: 'modal_open_why_us_detail', metadata: { detail_id: detailId } });
+  };
+
+  const defaultCards: WhyUsCard[] = [
+    { id: "kompleksowa", icon: "Scale", title: "Kompleksowa obsługa", desc: "Prowadzimy sprawy od etapu polubownego, przez sądowy, aż po egzekucję komorniczą.", assignedModalId: "legal" },
+    { id: "platnosc", icon: "TrendingUp", title: "Płatność za efekt", desc: "Prowizję (success fee) pobieramy wyłącznie wtedy, gdy realnie odzyskamy Twoje pieniądze.", assignedModalId: "efficiency" },
+    { id: "transparentne", icon: "Eye", title: "Transparentne koszty", desc: "Jasne stawki za wezwania i pozwy. Gwarantujemy brak ukrytych opłat i niespodzianek.", assignedModalId: "transparency" },
+    { id: "zasieg", icon: "MapPin", title: "Ogólnopolski zasięg", desc: "Współpracujemy z komornikami w całym kraju. Cały proces możesz przeprowadzić w 100% zdalnie.", assignedModalId: "monitoring" },
+    { id: "przejecie", icon: "RefreshCw", title: "Przejęcie w toku", desc: "Elastycznie dołączamy do spraw na każdym etapie – nawet tych będących już w sądzie lub u komornika.", assignedModalId: "speed" },
+    { id: "skutecznosc", icon: "Target", title: "Skuteczność", desc: "Oceniamy realne szanse odzyskania środków na podstawie weryfikacji sytuacji majątkowej dłużnika.", assignedModalId: "audit" },
+    { id: "formalnosci", icon: "FileCheck", title: "Minimum formalności", desc: "Nie wymagamy spotkań. Wystarczy, że przekażesz nam dokumenty, a całą resztą zajmiemy się my.", assignedModalId: "diplomacy" },
+    { id: "status", icon: "ShieldCheck", title: "Status Kancelarii", desc: "Jesteśmy kancelarią prawną, nie firmą windykacyjną. Zapewniamy pełną reprezentację procesową.", assignedModalId: "shield" }
+  ];
+
+  const cards = data?.cards || defaultCards;
+  const header = data?.header || {
+    title: "Dlaczego firmy wybierają nas, [br][blue]gdy liczy się efekt[/blue]",
+    description: "Zapewniamy wsparcie, które łączy dynamikę biznesową z najwyższym standardem obsługi prawnej."
+  };
+
+  const renderIcon = (iconName: string) => {
+    const Icon = (Icons[iconName as keyof typeof Icons] as React.ElementType) || Icons.CheckCircle;
+    return <Icon className="text-brand-blue" size={24} />;
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth / 2 : scrollLeft + clientWidth / 2;
+      scrollContainerRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
+  const renderTitle = (text: string) => {
+    if (!text) return null;
+    const lines = text.split(/\[br\]/i);
+    return lines.map((line, lineIndex) => {
+      const parts = line.split(/\[blue\](.*?)\[\/blue\]/gi);
+      return (
+        <React.Fragment key={lineIndex}>
+          {parts.map((part, partIndex) => {
+            if (partIndex % 2 === 1) {
+              return (
+                <span key={partIndex} className="text-brand-blue relative inline-block">
+                  {part}
+                  <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-blue/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+                  </svg>
+                </span>
+              );
+            }
+            return part;
+          })}
+          {lineIndex < lines.length - 1 && <br />}
+        </React.Fragment>
+      );
+    });
+  };
+
+  return (
+    <section id={id || 'usp'} className="pt-12 pb-16 bg-white relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+        
+        {/* Nagłówek sekcji z mb-12 (48px) zgodnie ze specyfikacją */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-12">
+          <div className="lg:w-[60%]">
+            <h2 className="text-4xl lg:text-7xl text-brand-navy mb-8 leading-[1.1] tracking-tight">
+              {renderTitle(header.title)}
+            </h2>
+            <p className="text-base lg:text-xl text-slate-500 font-medium max-w-2xl leading-relaxed">
+              {header.description}
+            </p>
+          </div>
+
+          {/* Animacja po prawej stronie - bez zmian wizualnych */}
+          <div className="lg:w-[35%] hidden lg:block">
+            <div className="relative w-full h-[350px] flex items-center justify-center">
+              <div className="absolute w-[260px] h-[260px] border border-slate-100 rounded-full animate-[spin_12s_linear_infinite]">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 bg-white border border-slate-100 rounded-[var(--radius-brand-input)] flex items-center justify-center text-slate-300 animate-[counter-spin_12s_linear_infinite]">
+                  <Mail size={12} />
+                </div>
+              </div>
+              <div className="absolute w-[190px] h-[190px] border border-brand-blue/10 rounded-full animate-[spin_20s_linear_infinite_reverse]">
+                <div className="absolute top-1/2 -left-4 -translate-y-1/2 w-8 h-8 bg-white border-2 border-brand-blue/20 rounded-[var(--radius-brand-button)] flex items-center justify-center text-brand-blue shadow-sm animate-[counter-spin-reverse_20s_linear_infinite]">
+                  <Scale size={14} />
+                </div>
+              </div>
+              <div className="relative w-28 h-36 bg-white rounded-[var(--radius-brand-button)] shadow-[0_20px_50px_-10px_rgba(10,46,92,0.11)] border border-slate-100 p-4 flex flex-col justify-between group animate-[float_5s_ease-in-out_infinite]">
+                <div className="space-y-1.5">
+                  <div className="w-6 h-6 bg-brand-light-blue rounded-[var(--radius-brand-input)] flex items-center justify-center text-brand-blue mb-2">
+                    <FileText size={14} />
+                  </div>
+                  <div className="w-full h-1.5 bg-slate-100 rounded-[var(--radius-brand-button)]"></div>
+                  <div className="w-2/3 h-1.5 bg-slate-100 rounded-[var(--radius-brand-button)]"></div>
+                </div>
+                <div className="mt-auto flex items-center justify-between">
+                  <div className="flex gap-1">
+                    <div className="w-1 h-1 bg-brand-blue rounded-full"></div>
+                  </div>
+                  <ShieldCheck className="text-brand-blue animate-pulse" size={16} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Karuzela Slimline Horizontal */}
+        <div className="relative group/carousel">
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {cards.map((card, idx) => {
+              const targetModalId = card.assignedModalId || card.id;
+              const hasModal = !!targetModalId && targetModalId !== "";
+              
+              return (
+              <div 
+                key={idx} 
+                onClick={() => hasModal && openWhyUsDetail(targetModalId)}
+                className={`min-w-[260px] md:min-w-[280px] lg:min-w-[calc(20%-20px)] min-h-[320px] snap-center p-8 bg-white rounded-[var(--radius-brand-card)] border border-slate-100 transition-all duration-500 flex flex-col ${hasModal ? 'hover:shadow-xl hover:shadow-slate-50 group cursor-pointer hover:-translate-y-2' : ''}`}
+              >
+                {/* Box ikony 56x56px z ikoną 24px */}
+                <div className={`w-14 h-14 bg-slate-50 border border-slate-50 rounded-[var(--radius-brand-button)] flex items-center justify-center mb-6 transition-all duration-300 shadow-sm ${hasModal ? 'group-hover:bg-brand-blue/5 group-hover:border-brand-blue/20' : ''}`}>
+                  {renderIcon(card.icon)}
+                </div>
+                <h3 className={`text-lg lg:text-xl font-black text-brand-navy mb-2 transition-colors leading-tight ${hasModal ? 'group-hover:text-brand-blue' : ''}`}>{card.title}</h3>
+                <p className="text-slate-500 leading-relaxed text-sm font-medium mb-6 flex-grow">{card.desc}</p>
+                
+                {hasModal && (
+                  <div className="mt-auto flex items-center gap-2 text-[10px] font-black text-brand-blue lg:opacity-0 group-hover:opacity-100 transition-all uppercase tracking-widest">
+                    Poznaj korzyści 
+                    <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                )}
+              </div>
+            )})}
+          </div>
+
+          {/* Przyciski nawigacyjne */}
+          <button 
+            onClick={() => scroll('left')}
+            className="absolute -left-4 top-1/2 -translate-y-1/2 p-3 bg-white border border-slate-100 text-slate-400 hover:bg-brand-blue hover:text-white rounded-[var(--radius-brand-button)] transition-all shadow-lg opacity-0 group-hover/carousel:opacity-100 hidden lg:flex"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button 
+            onClick={() => scroll('right')}
+            className="absolute -right-4 top-1/2 -translate-y-1/2 p-3 bg-white border border-slate-100 text-slate-400 hover:bg-brand-blue hover:text-white rounded-[var(--radius-brand-button)] transition-all shadow-lg opacity-0 group-hover/carousel:opacity-100 hidden lg:flex"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes counter-spin {
+          from { transform: translateX(-50%) rotate(0deg); }
+          to { transform: translateX(-50%) rotate(-360deg); }
+        }
+        @keyframes counter-spin-reverse {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default WhyUsV2;

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://script.google.com/macros/s/AKfycbxuAa5cV7IEm-l4068VxI-V8aNrXcHP-9NLelZZeFS2cHxMQMUnEyothl1EQ1fzNajg/exec?path=sitemap.xml

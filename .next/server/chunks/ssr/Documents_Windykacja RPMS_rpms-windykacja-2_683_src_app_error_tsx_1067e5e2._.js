@@ -1,0 +1,3 @@
+module.exports=[188243,a=>{"use strict";var b=a.i(797416),c=a.i(213944);function d({error:a,reset:d}){return(0,c.useEffect)(()=>{console.error(a)},[a]),(0,b.jsxs)("div",{className:"flex flex-col items-center justify-center min-h-screen p-6 text-center bg-white",children:[(0,b.jsx)("h2",{className:"text-2xl font-bold mb-4 text-brand-navy",children:"Coś poszło nie tak!"}),(0,b.jsx)("button",{onClick:()=>d(),className:"px-6 py-3 bg-brand-blue text-white font-bold rounded-[var(--radius-brand-button)] hover:bg-brand-blue/90 transition-all",children:"Spróbuj ponownie"})]})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=Documents_Windykacja%20RPMS_rpms-windykacja-2_683_src_app_error_tsx_1067e5e2._.js.map

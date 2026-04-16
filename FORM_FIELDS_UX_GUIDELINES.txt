@@ -1,0 +1,41 @@
+# Założenia UX/UI dla Pól Formularzy (Design System)
+
+## 1. Cel
+Ujednolicenie wyglądu i zachowania wszystkich pól formularzy w aplikacji, aby zapewnić spójność wizualną i przewidywalność interakcji dla użytkownika.
+
+## 2. Standardowy Wygląd Pola (Input / Textarea)
+Dotyczy wszystkich pól (Imię, Nazwisko, E-mail, Telefon, NIP, Wiadomość itp.) z wyjątkiem pola "Kwota zadłużenia brutto".
+
+### Stan Domyślny (Puste)
+- **Tło:** Jasnoszare (`bg-slate-50`)
+- **Obramowanie:** Jasnoszare (`border-slate-200`)
+- **Tekst (Placeholder):** Szary (`text-slate-400` / `placeholder:text-slate-400`)
+- **Ikona (jeśli dotyczy):** Szara (`text-slate-400`)
+
+### Stan Aktywny (Focus / Pisanie)
+- **Tło:** Białe (`bg-white`)
+- **Obramowanie:** Niebieskie (`border-brand-blue`)
+- **Cień/Poświata:** Niebieska poświata (`ring-4 ring-brand-blue/10`)
+- **Tekst:** Ciemny granat (`text-brand-navy`)
+- **Ikona (jeśli dotyczy):** Niebieska (`text-brand-blue`)
+
+### Stan Wypełnione (Po wyjściu / Blur)
+- **Tło:** Białe (`bg-white`) - *To kluczowa różnica względem stanu domyślnego*
+- **Obramowanie:** Szare (`border-slate-200`) - *Chyba że walidacja wykaże błąd*
+- **Tekst:** Ciemny granat (`text-brand-navy`)
+- **Ikona (jeśli dotyczy):** Szara (`text-slate-400`) lub Niebieska (zależnie od kontekstu walidacji)
+
+## 3. Wyjątek: Pole "Kwota zadłużenia brutto"
+To pole zachowuje swoje obecne, unikalne stylowanie.
+- **Tło:** Może różnić się od standardu (np. pozostawać szare lub mieć inny odcień).
+- **Zachowanie:** Nie podlega globalnej unifikacji opisanej w punkcie 2.
+
+## 4. Implementacja Techniczna (Tailwind CSS)
+Aby osiągnąć efekt "Wypełnione = Białe", należy zastosować klasę warunkową lub selektor CSS, np.:
+- `placeholder-shown:bg-slate-50` (Gdy widać placeholder = Puste = Szare)
+- `not(:placeholder-shown):bg-white` (Gdy nie widać placeholdera = Wypełnione = Białe)
+- `focus:bg-white` (Zawsze białe przy edycji)
+
+## 5. Pola Specjalne (Select / Date)
+- Powinny naśladować zachowanie standardowych inputów w miarę możliwości przeglądarki.
+- `type="date"` może wymagać wymuszenia tła, aby nadpisać style systemowe.

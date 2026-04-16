@@ -1,0 +1,51 @@
+{
+  "forms": {
+    "labels": {
+      "fontSize": "11px",
+      "fontWeight": "800",
+      "textTransform": "none",
+      "letterSpacing": "0.025em",
+      "color": "#64748b"
+    },
+    "inputs": {
+      "borderRadius": "12px",
+      "borderWidth": "1px",
+      "fontWeight": "700"
+    }
+  },
+  "buttons": {
+    "primary": {
+      "borderRadius": "12px",
+      "textTransform": "uppercase"
+    }
+  },
+  "cards": {
+    "borderRadius": "24px"
+  },
+  "typography": {
+    "headers": {
+      "fontFamily": "var(--font-manrope), sans-serif",
+      "h1Weight": "900",
+      "h2Weight": "800",
+      "color": "#0f172a"
+    },
+    "body": {
+      "fontFamily": "var(--font-manrope), sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "1.5",
+      "color": "#0f172a"
+    }
+  },
+  "colors": {
+    "brand": {
+      "primary": "#137fec",
+      "secondary": "#0a2e5c",
+      "accent": "#38bdf8"
+    },
+    "surface": {
+      "background": "#e0f2fe",
+      "card": "#ffffff",
+      "border": "#e2e8f0"
+    }
+  }
+}

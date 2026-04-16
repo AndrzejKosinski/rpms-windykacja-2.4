@@ -1,0 +1,21 @@
+INSTRUKCJA AKTUALIZACJI BAZY DANYCH (GOOGLE SHEETS) - v2.0.0
+
+Aby system Autoryzacji 2.0 działał poprawnie, należy ręcznie wprowadzić następujące zmiany w Arkuszu Master (RPMS_MASTER_INDEX):
+
+1. Arkusz: LISTA_KLIENTOW
+   - Dodaj nową kolumnę "I" (dziewiąta kolumna).
+   - Nagłówek: EmailVerified
+   - Dla istniejących użytkowników wpisz: TRUE (aby nie blokować im dostępu).
+   - Dla nowych użytkowników system będzie automatycznie wpisywał: FALSE.
+
+2. Nowy Arkusz: AuthTokens
+   - Utwórz nową zakładkę o nazwie: AuthTokens
+   - Dodaj nagłówki w pierwszym wierszu:
+     Kolumna A: Token
+     Kolumna B: Email
+     Kolumna C: Type
+     Kolumna D: ExpiresAt
+
+3. Weryfikacja:
+   - Upewnij się, że nazwy arkuszy są identyczne z powyższymi (wielkość liter ma znaczenie).
+   - Skrypty w wersji _v2.gs odwołują się do tych konkretnych lokalizacji.

@@ -1,0 +1,9 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/unsplash/route.js")
+R.c("server/chunks/[root-of-the-server]__59b7bf46._.js")
+R.c("server/chunks/Documents_Windykacja RPMS_rpms-windykacja-2_683_src_utils_session_ts_8ca95d93._.js")
+R.c("server/chunks/5997d_next_4992a80b._.js")
+R.c("server/chunks/5431c_rpms-windykacja-2_683_src_shared_api_apiClientFactory_ts_6d01689e._.js")
+R.c("server/chunks/[root-of-the-server]__13a7c789._.js")
+R.c("server/chunks/c9bbb_683__next-internal_server_app_api_unsplash_route_actions_0b6c8870.js")
+R.m(23530)
+module.exports=R.m(23530).exports

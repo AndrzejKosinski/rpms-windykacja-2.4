@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,993506,e=>{"use strict";var t=e.i(517973);function s({children:e}){return(0,t.jsx)("div",{className:"min-h-screen bg-slate-50",children:e})}e.s(["default",()=>s])}]);
